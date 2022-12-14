@@ -1,18 +1,19 @@
 void Controlword(int numerodicontrollo) {
 	if(numerodicontrollo = 2 || numerodicontrollo = 6 || numerodicontrollo = 8) {
-txMessage.frame.idType = rxMessage.frame.idType;
-txMessage.frame.id = 0x6040;
-txMessage.frame.dlc = 8;
-txMessage.frame.data0 = 0;
-txMessage.frame.data1 = 1;
-txMessage.frame.data2 = 1;
-txMessage.frame.data3 = 0;
-txMessage.frame.data4 = 0;
-txMessage.frame.data5 = 0;
-txMessage.frame.data6 = 0;
-txMessage.frame.data7 = 0;
-CANSPI_Transmit(&txMessage); 
- }
+	txMessage.frame.idType = rxMessage.frame.idType;
+	txMessage.frame.id = 0x6040;
+	txMessage.frame.dlc = 8;
+	txMessage.frame.data0 = 0;
+	txMessage.frame.data1 = 1;
+	txMessage.frame.data2 = 1;
+	txMessage.frame.data3 = 0;
+	txMessage.frame.data4 = 0;
+	txMessage.frame.data5 = 0;
+	txMessage.frame.data6 = 0;
+	txMessage.frame.data7 = 0;
+	CANSPI_Transmit(&txMessage); 
+	 }
+
 	if(numerodicontrollo = 3 ) {
 	txMessage.frame.idType = rxMessage.frame.idType;
 	txMessage.frame.id = 0x6040;
@@ -27,6 +28,7 @@ CANSPI_Transmit(&txMessage);
 	txMessage.frame.data7 = 0;
 	CANSPI_Transmit(&txMessage); 
 	 }
+	
 	if(numerodicontrollo = 7 || numerodicontrollo = 9 || numerodicontrollo = 10 || numerodicontrollo = 12 ) {
 	txMessage.frame.idType = rxMessage.frame.idType;
 	txMessage.frame.id = 0x6040;
@@ -41,6 +43,7 @@ CANSPI_Transmit(&txMessage);
 	txMessage.frame.data7 = 0;
 	CANSPI_Transmit(&txMessage); 
 	 }
+	
 	if(numerodicontrollo = 7 || numerodicontrollo = 10 || numerodicontrollo = 11) {
 	txMessage.frame.idType = rxMessage.frame.idType;
 	txMessage.frame.id = 0x6040;
@@ -103,9 +106,8 @@ CANSPI_Transmit(&txMessage);
 }
 void ModesOfOperation(int numerodicontrollo) {
 	txMessage.frame.idType = rxMessage.frame.idType;
-
-txMessage.frame.id = 0x6060;
-txMessage.frame.dlc = 1;
-txMessage.frame.data0 = numerodicontrollo;
-CANSPI_Transmit(&txMessage); 
+	txMessage.frame.id = 0x6060;
+	txMessage.frame.dlc = 1;
+	txMessage.frame.data0 = numerodicontrollo;
+	CANSPI_Transmit(&txMessage); 
 }
