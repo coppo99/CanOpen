@@ -155,7 +155,7 @@ txMessage.frame.id = 0x2007;
 txMessage.frame.dlc = 2;
 txMessage.frame.data0 = numerodicontrollo;
 CANSPI_Transmit(&txMessage); 
-
+}
 
 void HomingSaturationTime(int numerodicontrollo) {
 	txMessage.frame.idType = rxMessage.frame.idType;
@@ -164,3 +164,4 @@ txMessage.frame.id = 0x2008;
 txMessage.frame.dlc = 4;
 txMessage.frame.data0 = numerodicontrollo;
 CANSPI_Transmit(&txMessage);
+}
