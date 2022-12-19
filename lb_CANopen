@@ -111,3 +111,56 @@ void ModesOfOperation(int numerodicontrollo) {
 	txMessage.frame.data0 = numerodicontrollo;
 	CANSPI_Transmit(&txMessage); 
 }
+void ModesOfOperationDisplay (int numerodicontrollo) {
+	txMessage.frame.idType = rxMessage.frame.idType;
+
+txMessage.frame.id = 0x6061;
+txMessage.frame.dlc = 1;
+txMessage.frame.data0 = numerodicontrollo;
+CANSPI_Transmit(&txMessage); 
+}
+
+void PositionDemandValue(int numerodicontrollo) {
+	txMessage.frame.idType = rxMessage.frame.idType;
+
+txMessage.frame.id = 0x6062;
+txMessage.frame.dlc = 4;
+txMessage.frame.data0 = numerodicontrollo;
+CANSPI_Transmit(&txMessage); 
+
+
+void PsitionActualInternalValue (int numerodicontrollo) {
+	txMessage.frame.idType = rxMessage.frame.idType;
+
+txMessage.frame.id = 0x6063;
+txMessage.frame.dlc = 1;
+txMessage.frame.data0 = numerodicontrollo;
+CANSPI_Transmit(&txMessage); 
+
+
+void HomingCurrentSaturation (int numerodicontrollo) {
+	txMessage.frame.idType = rxMessage.frame.idType;
+
+txMessage.frame.id = 0x2006;
+txMessage.frame.dlc = 2;
+txMessage.frame.data0 = numerodicontrollo;
+CANSPI_Transmit(&txMessage);
+
+}
+
+void HomingTorqueSaturation(int numerodicontrollo) {
+	txMessage.frame.idType = rxMessage.frame.idType;
+
+txMessage.frame.id = 0x2007;
+txMessage.frame.dlc = 2;
+txMessage.frame.data0 = numerodicontrollo;
+CANSPI_Transmit(&txMessage); 
+
+
+void HomingSaturationTime(int numerodicontrollo) {
+	txMessage.frame.idType = rxMessage.frame.idType;
+
+txMessage.frame.id = 0x2008;
+txMessage.frame.dlc = 4;
+txMessage.frame.data0 = numerodicontrollo;
+CANSPI_Transmit(&txMessage);
